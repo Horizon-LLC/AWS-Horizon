@@ -1,0 +1,4 @@
+# Environment files
+.env
+zappa_settings.json
+venv/

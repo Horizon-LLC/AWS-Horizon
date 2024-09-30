@@ -1,0 +1,59 @@
+import React, { useState } from 'react';
+
+import {Button} from "@nextui-org/button";
+import {Chip} from "@nextui-org/chip";
+
+
+const UserList = () => {
+    const [users, setUsers] = useState([]);
+    const [error, setError] = useState(null);
+
+
+    const fetchData = async () => {
+        console.log("Button clicked, fetching data...");  // Check if this logs in the console
+        try {
+            const response = await fetch("https://m0fyhe5pvf.execute-api.us-east-1.amazonaws.com/dev/allUsers");  // Call Flask API
+            console.log("Response status:", response.status);  // Log the status code
+            // Log the raw response to check if it's valid
+            console.log("Raw response:", response);
+
+            // Check if the response is OK
+            if (!response.ok) {
+                console.log("Failed to fetch data:", response.status);
+                throw new Error(`Error: ${response.status}`);
+            }
+
+
+            const data = await response.json();
+            if (response.ok) {
+                console.log("Success: fetched data");
+            } else {
+                console.log("Failed: fetched data");
+            }
+            setUsers(data);
+        } catch (error) {
+            setError('Error fetching data');
+            console.error("Fetch error:", error);  // Log the error details
+        }
+    };
+
+    return (
+        <div>
+            <h1>Click to Get All Users</h1>
+            <Button color="primary" onClick={fetchData}>Get User Data</Button>
+
+            {error && <p>{error}</p>}
+            <div id="user-data">
+                {users.length > 0 && (
+                    <ul>
+                        {users.map(user => (
+                            <li key={user.id}>ID: {user.id}, Name: {user.username}, Email: {user.email}, User_Creation_Date{user.user_creation_date}, is_above_18{user.is_above_18}</li>
+                        ))}
+                    </ul>
+                )}
+            </div>
+        </div>
+    );
+};
+
+export default UserList;

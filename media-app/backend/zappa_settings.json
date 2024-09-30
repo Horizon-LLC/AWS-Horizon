@@ -1,0 +1,22 @@
+{
+    "dev": {
+        "app_function": "app.app",
+        "aws_region": "us-east-1",
+        "profile_name": "default",
+        "project_name": "media-app",
+        "runtime": "python3.9",
+        "s3_bucket": "zappa-media-app-bucket",
+        "exclude": ["venv", ".venv", "__pycache__", "*.pyc", "*.pyo"],
+        "environment_variables": {
+            "FLASK_ENV": "development",
+            "DB_HOST": "horizon-llc.cdcgg8uief43.us-east-1.rds.amazonaws.com",
+            "DB_USER": "admin",
+            "DB_PASSWORD": "horizon4800",
+            "DB_NAME": "horizon"
+        },
+        "timeout_seconds": 300,
+        "memory_size": 512,
+        "keep_warm": false,
+        "debug": true
+    }
+}
