@@ -12,7 +12,7 @@ const UserProfile = ({loggedInUser, loggedInUserId}) => {
     const fetchUserData = async () => {
         try {
           const token = localStorage.getItem('token');
-          const response = await fetch(`http://127.0.0.1:5000/user/${userId}`, {
+          const response = await fetch(`https://m0fyhe5pvf.execute-api.us-east-1.amazonaws.com/dev/${userId}`, {
             method: 'GET',
             headers: {
               'Authorization': `Bearer ${token}`,
@@ -34,7 +34,7 @@ const UserProfile = ({loggedInUser, loggedInUserId}) => {
     const chatboxDirect = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch('http://127.0.0.1:5000/create-or-fetch-chatbox', {
+            const response = await fetch('https://m0fyhe5pvf.execute-api.us-east-1.amazonaws.com/dev/create-or-fetch-chatbox', {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${token}`,

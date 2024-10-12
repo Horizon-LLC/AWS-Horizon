@@ -10,12 +10,12 @@ const Feed = forwardRef((props, ref) => {
         setLoading(true);
         const token = localStorage.getItem('token'); // Get the token from local storage
         try {
-            const response = await fetch('http://127.0.0.1:5000/dashboard', {
+            const response = await fetch('https://m0fyhe5pvf.execute-api.us-east-1.amazonaws.com/dev/dashboard', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`,  // Use the actual token
                     'Content-Type': 'application/json',
-                },
+                }
             });
 
             if (response.status === 401) {

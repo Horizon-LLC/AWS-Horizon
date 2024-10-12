@@ -1,4 +1,4 @@
-#!C:\Users\caden\Social Media Project\Horizon\media-app\backend\venv\Scripts\python.exe
+#!C:\Users\adria\Desktop\help\Horizon\media-app\backend\venv\Scripts\python.exe
 
 # $Id: rst2latex.py 5905 2009-04-16 12:04:49Z milde $
 # Author: David Goodger <goodger@python.org>

@@ -37,7 +37,7 @@ const HomePage = ({loggedInUser}) => {
         try {
             const currentDateTime = formatDate(new Date());
             console.log(currentDateTime);
-            const response = await fetch('http://127.0.0.1:5000/create-post', {
+            const response = await fetch('https://m0fyhe5pvf.execute-api.us-east-1.amazonaws.com/dev/create-post', {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${token}`,
@@ -63,7 +63,7 @@ const HomePage = ({loggedInUser}) => {
     const getAllUsers = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch('http://127.0.0.1:5000/users', {
+            const response = await fetch('https://m0fyhe5pvf.execute-api.us-east-1.amazonaws.com/dev/users', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`,

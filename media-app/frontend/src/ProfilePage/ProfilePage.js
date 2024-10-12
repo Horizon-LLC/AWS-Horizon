@@ -7,7 +7,7 @@ const ProfilePage = ({ setLoggedInUser, setLoggedInUserId }) => {
 
     const handleLogout = async () => {
         try {
-            const response = await fetch('http://127.0.0.1:5000/logout', {
+            const response = await fetch('https://m0fyhe5pvf.execute-api.us-east-1.amazonaws.com/dev/logout', {
                 method: 'POST',
                 credentials: 'include',  // Include session cookies
             });

@@ -1,4 +1,4 @@
-#!C:\Users\caden\Social Media Project\Horizon\media-app\backend\venv\Scripts\python.exe
+#!C:\Users\adria\Desktop\help\Horizon\media-app\backend\venv\Scripts\python.exe
 
 import sys
 import json

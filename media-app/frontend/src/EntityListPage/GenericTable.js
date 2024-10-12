@@ -14,7 +14,7 @@ const GenericTable = ({ apiEndpoint, title }) => {
         setError(null);
 
         try {
-            const response = await fetch(`http://127.0.0.1:5000/${apiEndpoint}`);
+            const response = await fetch(`https://m0fyhe5pvf.execute-api.us-east-1.amazonaws.com/dev/${apiEndpoint}`);
             if (!response.ok) {
                 throw new Error("Network response was not ok");
             }

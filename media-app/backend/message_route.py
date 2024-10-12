@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 from datetime import datetime
-from backend.database.db import get_db_connection
-from backend.dashboard_route import token_required
+from database.db import get_db_connection
+from dashboard_route import token_required
 
 
 message_blueprint = Blueprint('message', __name__)

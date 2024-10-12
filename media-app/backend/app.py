@@ -10,11 +10,12 @@ import os
 
 # from graphviz import render
 
-from backend.database.db import get_db_connection
-from backend.database.test_routes import test_blueprint  # Import test blueprint
-from backend.user_routes import user_blueprint # Import the blueprint
-from backend.dashboard_route import dashboard_blueprint # Import the dashboard blueprint
-from backend.message_route import message_blueprint
+from database.db import get_db_connection
+from database.test_routes import test_blueprint  # Import test blueprint
+from user_routes import user_blueprint  # Import the blueprint
+from dashboard_route import dashboard_blueprint  # Import the dashboard blueprint
+from message_route import message_blueprint  # Import the message blueprint
+
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
@@ -87,7 +88,7 @@ def get_table_data(table_name) -> Response:
 
 #Apply CORS to all responses
 def apply_cors(response):
-    response.headers['Access-Control-Allow-Origin'] = "http://localhost:3000"  # Change to frontend's domain
+    response.headers['Access-Control-Allow-Origin'] = "https://horizon-llc.net"  # Change to frontend's domain
     response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
     response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS"
     return response
